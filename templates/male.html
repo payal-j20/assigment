@@ -1,0 +1,15 @@
+<html>
+<body>
+<form action="/myfav" method="post">
+{% csrf_token %}
+<label style="hidden" id="l_fg"></label><br>
+<label>Favourit game :</label><br>
+<input type="text" id ="f_g" name="fg" required /><br>
+<label style="hidden" id="l_fsp"></label><br>
+<label>Favourite Sports person :</label><br>
+<input type="text" id ="f_sp" name="fsp" required /><br>
+<input type="submit" />
+
+</form>
+</body>
+</html>

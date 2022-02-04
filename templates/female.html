@@ -1,0 +1,19 @@
+<html>
+<body>	
+<form action="/myfav" method="post">
+{% csrf_token %}
+<label style="hidden" id="l_fc"></label><br>
+<label>Favourit color :</label><br>
+<input type="text" id ="f_c" name="fc" required /><br>
+<label style="hidden" id="l_fbb"></label><br>
+<label>Favourite Beauty Brand :</label><br>
+<input type="text" id ="f_bb" name="fbb" required /><br>
+<label style="hidden" id="l_fbp"></label><br>
+<label>Favourite Beauty Produt :</label><br>
+<input type="text" id ="f_bp" name="fbp" required /><br>
+<input type="submit" />
+
+
+</form>
+</body>
+</html>

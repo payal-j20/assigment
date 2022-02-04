@@ -1,0 +1,56 @@
+<html>
+<body>
+<form action="/validate" onsubmit="return validate()" method="post">
+{% csrf_token %}
+<label>First name :</label><br>
+<input type="text" name="first_name" id="fn" required/><br>
+<label>Last name :</label><br>
+<input type="text" name="last_name" required/><br>
+<label>Password :</label><br>
+<input type="password" name="password" required/><br>
+<label>Gender:</label><br>
+<select name="gender">
+<option name="male">Male</option>
+<option name="female">Female</option>
+</select><br>
+<label style="hidden" id="l_em"></label><br>
+<label>Email :</label><br>
+<input type="text" id ="em" name="email" /><br>
+<label style="hidden" id="l_ph"></label><br>
+<label>Phone :</label><br>
+<input type="text" id ="ph" name="phone" /><br>
+<input type="submit" />
+</form>
+
+
+<script>
+
+function validate() {
+var x=document.getElementById("em").value;
+var ph=document.getElementById("ph").value;
+console.log("hii");
+console.log("hii");
+var rege=/^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/;
+
+var r_ph=/[0-9]{10}/;
+
+
+if(x.match(rege)&&ph.match(r_ph)){
+console.log("match"+x.match(rege));
+return true;
+
+}
+else if(x.match(rege)==null){
+document.getElementById("l_em").style.color = "red";
+document.getElementById("l_em").innerHTML="Enter valid Email ";
+return false;
+}
+else if(ph.match(r_ph)==null){
+document.getElementById("l_ph").style.color = "red";
+document.getElementById("l_ph").innerHTML="Enter valid phone number";
+return false;
+}
+}
+</script>
+</body>
+</html>
